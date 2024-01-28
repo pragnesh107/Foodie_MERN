@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.carousel{
+  max-height: 500px !important;
+}
+
+.car-img{
+  height: 370px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.cards-img{
+  height: 210px;
+  object-fit: fill;
+}
+
