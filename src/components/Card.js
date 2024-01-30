@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState,useContext } from 'react';
 import { useCart,useDispatchCart} from './ContextReducer';
+import { loginContext } from '../components/LoginStatusProvider';
 
 export default function Card(props) {
+  const { loginStatus } = useContext(loginContext);
   let dispatch = useDispatchCart();
   let data = useCart();
   const sizeOptions = props.options;
@@ -59,7 +61,7 @@ export default function Card(props) {
           }
         </select>
         <div className='d-inline fs-5'>₹{price}</div>
-        {props.loginStatus ? <div className="btn btn-outline-success mt-3 w-100" onClick={handelAddCart}>Add To Cart</div>
+        {loginStatus ? <div className="btn btn-outline-success mt-3 w-100" onClick={handelAddCart}>Add To Cart</div>
         : ''}
       </div>
     </div>

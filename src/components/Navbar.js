@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Modal from './Modal';
 import { useCart } from './ContextReducer';
+import { loginContext } from '../components/LoginStatusProvider';
 
-export default function Navbar(props) {
+export default function Navbar() {
+    const { loginStatus, setLoginStatus } = useContext(loginContext);
     let data = useCart();
 
     const [cartView, setCartView] = useState(false);
@@ -19,7 +21,7 @@ export default function Navbar(props) {
     }
 
     const handleLogout = () => {
-        props.setLoginStatus(false);
+        setLoginStatus(false);
         localStorage.removeItem('authToken');
         navigate('/');
     }
@@ -36,14 +38,14 @@ export default function Navbar(props) {
                         <li className="nav-item">
                             <Link className="nav-link text-light" aria-current="page" to="/">Home</Link>
                         </li>
-                        {props.loginStatus
+                        {loginStatus
                             ? <li>
                                 <Link className="nav-link text-light" aria-current="page" to="/myOrders">My Orders</Link>
                             </li>
                             : ""
                         }
                     </ul>
-                    {props.loginStatus
+                    {loginStatus
                        ? <div className='d-flex'>
                             <div className="btn btn-outline-success mx-2 text-light" onClick={handelMyCart}>My Cart <span className="badge rounded-pill text-bg-danger">{data.length}</span> </div>
                             {cartView ? <Modal onClose={handleCloseCart} data={data} /> : ""}

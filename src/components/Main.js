@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from '../components/Card'
 
-export default function Main(props) {
+export default function Main() {
     const [search, setSearch] = useState('');
     const [foodItem, setFoodItems] = useState([]);
     const [foodCategory, setFoodCategory] = useState([]);
@@ -70,7 +70,7 @@ export default function Main(props) {
                                             ? foodItem.filter((item) => category.CategoryName === item.CategoryName && item.name.toLowerCase().includes(search.toLocaleLowerCase()))
                                                 .map(filterItem => {
                                                     return (
-                                                        <Card key={filterItem._id} foodItems={filterItem} options={filterItem.options[0]} loginStatus={props.loginStatus} setLoginStatus={props.setLoginStatus}/>
+                                                        <Card key={filterItem._id} foodItems={filterItem} options={filterItem.options[0]}/>
                                                     )
                                                 })
                                             : ""

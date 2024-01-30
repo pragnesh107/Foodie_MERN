@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { loginContext } from '../components/LoginStatusProvider';
 
 
-export default function Login(props) {
+export default function Login() {
+    const { setLoginStatus } = useContext(loginContext);
     const [info, setInfo] = useState({email: '', password: ''});
     const navigate = useNavigate();
     const handlesubmit = async (e)=>{
@@ -19,7 +21,7 @@ export default function Login(props) {
             alert(json.error);
         }
         else{
-            props.setLoginStatus(true);
+            setLoginStatus(true);
             localStorage.setItem("authToken",json.authToken);
             localStorage.setItem("userEmail",info.email);
             // console.log(localStorage.getItem("authToken"));
