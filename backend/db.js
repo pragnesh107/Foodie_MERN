@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const conUrl = "mongodb+srv://admin:admin123@cluster0.d3k6hrw.mongodb.net/foodie?retryWrites=true&w=majority";
+const conUrl = "mongodb+srv://admin:Admin321@cluster0.d3k6hrw.mongodb.net/foodie?retryWrites=true&w=majority";
 
 const mongoDB = () => {
     mongoose.connect(conUrl)
