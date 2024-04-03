@@ -7,7 +7,7 @@ export default function Modal({ onClose, data }) {
   let totalPrice = cartData.reduce((total, item) => total + item.price, 0)
   const handelCheckOut = async () => {
     let userEmail = localStorage.getItem('userEmail');
-    let response = await fetch("http://localhost:8000/api/orderData", {
+    let response = await fetch("https://foodie-mern-agzq.onrender.com/api/orderData", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
