@@ -6,7 +6,9 @@ require("dotenv").config();
 
 // middleware
 const corsOptions = {
-    origin: "https://foodieme.onrender.com" // frontend URI (ReactJS)
+    origin: "*" 
+    // origin: "https://foodieme.onrender.com" 
+
 }
 app.use(express.json());
 app.use(cors(corsOptions));
