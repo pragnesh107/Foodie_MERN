@@ -36,13 +36,13 @@ export default function Main() {
                             </div>
                         </div>
                         <div className="carousel-item active">
-                            <img src="https://source.unsplash.com/random/500×500/?burger" className="d-block w-100 car-img " alt="..." />
+                            <img src="food1.jpg" className="d-block w-100 car-img " alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://source.unsplash.com/random/500×500/?sandwich" className="d-block w-100 car-img" alt="..." />
+                            <img src="food2.jpg" className="d-block w-100 car-img" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img src="https://source.unsplash.com/random/500×500/?pizza" className="d-block w-100 car-img" alt="..." />
+                            <img src="food3.jpgj" className="d-block w-100 car-img" alt="..." />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
